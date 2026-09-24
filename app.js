@@ -10,7 +10,7 @@
   ];
   const seed = () => ({
     order: { id: 'ord-001', planNo: 'PLAN-2026-091', partId: 'A-LED-001', partName: 'Smart Headlamp Module', lotId: 'LOT-2409-A', quantity: 120, unit: 'pcs', customerId: 'cus-01', customerName: 'SEMV Demo Plant', dnCode: 'DN-2409-001', status: 'SHIPMENT', warehouseState: 'SENT', receiptLock: null },
-    customer: { id: 'cus-01', name: 'SEMV Demo Plant', latitude: -6.2146, longitude: 106.8451, radiusMeters: 250 },
+    customer: { id: 'cus-01', name: 'SEMV Demo Plant', latitude: -6.3764484, longitude: 107.3181421, radiusMeters: 250 },
     events: [
       event('PLAN_CREATED', 'Plan released', users[0], { demoSeed: true }),
       event('MATERIAL_PREPARED', 'Material prepared', users[1], { demoSeed: true }),
