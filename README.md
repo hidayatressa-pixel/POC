@@ -30,7 +30,7 @@ All passwords are `demo123`.
 
 `Plan → Material Request → Raw Material Received → Prepare → MC A → MC B → MC C → Final Inspection → Finished Good → DN → Shipment → Customer Received`
 
-Every stage is performed only by its authorised PIC. The active PIC opens **My Scan Task** and must use camera scan or the clearly marked demo-scan trigger. A mismatched barcode, rejected camera, or failed customer GPS check locks the full flow. Only Admin can unlock it after entering a recovery reason; the Admin can never create a receipt.
+Every stage is performed only by its authorised PIC. The active PIC opens **My Scan Task** and must use camera scan or the clearly marked demo-scan trigger. A mismatched barcode, rejected camera, or failed customer GPS check is recorded as a rejected attempt. Each PIC has three attempts per active stage; only the third failure locks the full flow. Admin can unlock it after entering a recovery reason, but can never create a receipt.
 
 Barcode samples used in the POC:
 
