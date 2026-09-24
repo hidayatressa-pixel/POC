@@ -40,3 +40,15 @@ Barcode samples used in the POC:
 ## POC boundary
 
 The app uses browser-local storage and demo accounts. It demonstrates role control, sequential scan evidence, abnormality locks, and CSV reporting; it is not an enterprise authentication, anti-spoofing, or audit system. Google Sheets/App Script is intentionally deferred.
+
+
+## Judge testing instructions
+
+1. Open the GitHub Pages deployment, or serve this repository using the local command above.
+2. Sign in with `planner` / `demo123`, open **My Scan Task**, and use **Run marked demo scan**.
+3. Continue with the next authorised account in the order shown in the flow. Only the PIC assigned to the active step can scan it.
+4. For a rejection scenario, use a camera barcode that does not match the expected code, deny a browser permission, or attempt the next step using the wrong PIC. The first two rejected scans are recorded and the PIC may retry.
+5. The third rejected scan locks the flow. Sign in as `admin`, open **Abnormality Lock**, enter a recovery reason, and unlock it for a new scan.
+6. For the final Customer Received step, sign in as `incoming`. The DN scan requires the browser's live location to be within the demo coordinate and 250 m radius configured in `app.js`.
+
+The POC is intentionally browser-local: refresh or use **Reset Demo** to begin a clean walkthrough.
