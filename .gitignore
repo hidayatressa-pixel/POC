@@ -1,0 +1,9 @@
+/devpost/learner-profile.md
+.env
+.env.*
+!.env.example
+.agents/
+.claude/
+agent/
+skills-lock.json
+msc-traceability-poc.zip
