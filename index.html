@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10253a" />
+    <title>MSC Traceability</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <dialog id="cameraDialog" class="camera-dialog">
+      <section>
+        <header><strong>Scan Delivery Note</strong><button data-action="close-camera" aria-label="Tutup scanner">×</button></header>
+        <video id="cameraPreview" autoplay playsinline></video>
+        <p id="cameraStatus">Menyiapkan kamera…</p>
+      </section>
+    </dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
