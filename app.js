@@ -31,7 +31,7 @@
   const app = document.getElementById('app');
   let stream = null;
   function uid() { return (crypto && crypto.randomUUID) ? crypto.randomUUID() : 'evt-'+Date.now(); }
-  function seed() { return { order:{ planNo:'PLAN-2026-091', partId:'A-LED-001', partName:'Smart Headlamp Module', lotId:'LOT-2409-A', quantity:120, unit:'pcs', dnCode:'DN-2409-001', customerName:'SEMV Demo Plant', status:'WAITING_PLAN', cursor:0, lock:null, attempts:null }, customer:{ id:'cus-01', latitude:-6.3764484, longitude:107.3181421, radiusMeters:250 }, events:[], notifications:[] }; }
+  function seed() { return { order:{ planNo:'PLAN-2026-091', partId:'A-LED-001', partName:'Smart Headlamp Module', lotId:'LOT-2409-A', quantity:120, unit:'pcs', dnCode:'DN-2409-001', customerName:'Customer Demo Plant', status:'WAITING_PLAN', cursor:0, lock:null, attempts:null }, customer:{ id:'cus-01', latitude:-6.3764484, longitude:107.3181421, radiusMeters:250 }, events:[], notifications:[] }; }
   function load() { try { const v=JSON.parse(localStorage.getItem(STORAGE)); return v && v.order && Array.isArray(v.events) ? v : seed(); } catch(e) { return seed(); } }
   let state=load(), session=JSON.parse(localStorage.getItem(SESSION)||'null'), page='tracking';
   function save(){ localStorage.setItem(STORAGE,JSON.stringify(state)); }
