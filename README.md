@@ -23,14 +23,15 @@ All passwords are `demo123`.
 | Operator MC B | `mcb` |
 | Operator MC C | `mcc` |
 | Final Inspection | `quality` |
+| Finished Good PIC | `fg` |
 | Customer Incoming | `incoming` |
 | Admin | `admin` |
 
 ## End-to-end transaction flow
 
-`Plan → Material Request → Raw Material Received → Prepare → MC A → MC B → MC C → Final Inspection → Finished Good → DN → Shipment → Customer Received`
+`Plan (Part + Qty baseline) → Material Request → Raw Material Received → Prepare → MC A → MC B → MC C → Final Inspection → Finished Good Receive → Generate DN → Shipment → Customer Received`
 
-Every stage is performed only by its authorised PIC. The active PIC opens **My Scan Task** and must use camera scan or the clearly marked demo-scan trigger. A mismatched barcode, rejected camera, or failed customer GPS check is recorded as a rejected attempt. Each PIC has three attempts per active stage; only the third failure locks the full flow. Admin can unlock it after entering a recovery reason, but can never create a receipt.
+Finished Good PIC owns Finished Good Receive, Generate DN, and Shipment. Every stage is performed only by its authorised PIC. The active PIC opens **My Scan Task** and must use camera scan or the clearly marked demo-scan trigger. A mismatched barcode, rejected camera, or failed customer GPS check is recorded as a rejected attempt. Each PIC has three attempts per active stage; only the third failure locks the full flow. Admin can unlock it after entering a recovery reason, but can never create a receipt.
 
 Barcode samples used in the POC:
 
@@ -51,4 +52,4 @@ The app uses browser-local storage and demo accounts. It demonstrates role contr
 5. The third rejected scan locks the flow. Sign in as `admin`, open **Abnormality Lock**, enter a recovery reason, and unlock it for a new scan.
 6. For the final Customer Received step, sign in as `incoming`. The DN scan requires the browser's live location to be within the demo coordinate and 250 m radius configured in `app.js`.
 
-The POC is intentionally browser-local: refresh or use **Reset Demo** to begin a clean walkthrough.
+The POC is intentionally browser-local: refresh or use **Reset Demo** to begin a clean walkthrough. Plan Qty becomes the baseline. Production and Final Inspection record Actual Qty and a required reason whenever the quantity decreases; Plan, Actual, Variance, and Reason are included in the report.
